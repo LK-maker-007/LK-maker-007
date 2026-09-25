@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="header-dark.svg">
-  <img alt="Singaraj B, machine learning practitioner" src="header-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="header-terminal-dark.svg">
+  <img alt="Singaraj B, machine learning practitioner" src="header-terminal-light.svg">
 </picture>
 
 I work on the internals of the open-source ML stack. Most of what I ship is other people's
