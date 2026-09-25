@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="header-dark.svg">
-  <img alt="Singaraj B, machine learning engineer" src="header-light.svg">
+  <img alt="Singaraj B, machine learning practitioner" src="header-light.svg">
 </picture>
 
 I work on the internals of the open-source ML stack. Most of what I ship is other people's
@@ -47,9 +47,8 @@ Singaraj/sante-embed               88/30d   rank 9 of 387, MTEB(Medical, v1)
 Singaraj/MorisienMTBitextMining    45/30d   benchmark task, MIT
 ```
 
-**sante-embed** is 1.5B and sits above `nvidia/NV-Embed-v2` at 7.85B and
-`intfloat/e5-mistral-7b-instruct` at 7.11B. Complete 12-task submission, which only 158 of 371
-models on that board manage.
+**sante-embed** is 1.5B, rank 9 of 387 on MTEB(Medical, v1). Complete 12-task submission,
+which only 158 of 371 models on that board manage.
 
 **morisien-embed** is the first text embedding model for Mauritian Creole, and
 `MorisienMTBitextMining` is the language's first task in MTEB. Auditing the standard evaluation
