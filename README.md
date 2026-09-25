@@ -60,8 +60,8 @@ leak-filtered benchmark instead of publishing the contaminated number.
 [morisien-embed: A Dedicated Text Embedding Model and Benchmark for Mauritian Creole](https://doi.org/10.5281/zenodo.21877805).
 Sole author, indexed in OpenAIRE. Model, dataset and training code under MIT.
 
-<sub>
-<a href="https://huggingface.co/Singaraj">huggingface.co/Singaraj</a> ·
-<a href="https://orcid.org/0009-0002-1502-362X">ORCID 0009-0002-1502-362X</a> ·
-<img src="https://komarev.com/ghpvc/?username=LK-maker-007&style=flat&color=555555&label=views" alt="profile views">
-</sub>
+<p>
+<a href="https://huggingface.co/Singaraj"><img alt="Hugging Face" height="20" src="https://img.shields.io/badge/%F0%9F%A4%97-Singaraj-lightgrey?style=flat&labelColor=555555"></a>
+<a href="https://orcid.org/0009-0002-1502-362X"><img alt="ORCID" height="20" src="https://img.shields.io/badge/ORCID-0009--0002--1502--362X-lightgrey?style=flat&labelColor=555555"></a>
+<img alt="profile views" height="20" src="https://komarev.com/ghpvc/?username=LK-maker-007&style=flat&color=lightgrey&label=views">
+</p>
