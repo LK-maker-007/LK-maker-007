@@ -1,0 +1,48 @@
+name: Refresh counts
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Day of week
+        id: dow
+        run: echo "day=$(date -u +%u)" >> "$GITHUB_OUTPUT"
+
+      # the leaderboard parquet is 570 MB and the rank moves slowly, so it is recomputed on
+      # Mondays only. The PR and download counts in the next step are plain API calls, daily.
+      - name: Recompute MTEB rank
+        if: steps.dow.outputs.day == '1' || github.event_name == 'workflow_dispatch'
+        run: |
+          pip install --quiet "mteb==2.20.11" pandas polars huggingface_hub
+          python scripts/rank.py
+
+      - name: Rebuild README and headers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/build.py
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md header-terminal-dark.svg header-terminal-light.svg rank.json
+          git commit -m "Refresh counts"
+          git push
