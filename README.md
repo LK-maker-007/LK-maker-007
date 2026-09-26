@@ -3,9 +3,6 @@
   <img alt="Singaraj B, machine learning practitioner" src="header-terminal-light.svg">
 </picture>
 
-I work on the internals of the open-source ML stack. Most of what I ship is other people's
-libraries, fixed.
-
 ```console
 $ gh pr list --author LK-maker-007 --state merged --json repository
 
@@ -17,9 +14,6 @@ deepset-ai/haystack                 1   typing.Literal serialisation
                                    --
                                    17   merged, every diff and review thread public
 ```
-
-Credited by name in [PEFT v0.21.0](https://github.com/huggingface/peft/releases/tag/v0.21.0)
-and [sentence-transformers v5.7.0](https://github.com/huggingface/sentence-transformers/releases/tag/v5.7.0).
 
 Three of the fixes are the same bug class, which is the one I keep finding: **something fails
 and reports success.**
