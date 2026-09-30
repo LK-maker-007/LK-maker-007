@@ -17,8 +17,8 @@ REPOS = [
 ]
 
 MODELS = [
-    ("Singaraj/morisien-embed-v1.5", "model", "first embedding model for Mauritian Creole"),
-    ("Singaraj/morisien-embed", "model", "0.928 mean F1, MTEB task I also authored"),
+    ("Singaraj/morisien-embed-v1.5", "model", "0.928 mean F1, MTEB task I also authored"),
+    ("Singaraj/morisien-embed", "model", "first embedding model for Mauritian Creole"),
     ("Singaraj/sante-embed", "model", "rank {rank} of {field}, MTEB(Medical, v1)"),
     ("Singaraj/MorisienMTBitextMining", "dataset", "benchmark task, MIT"),
 ]

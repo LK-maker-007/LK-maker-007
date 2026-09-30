@@ -42,7 +42,7 @@ leak-filtered benchmark instead of publishing the contaminated number.
 
 ### Writing
 
-[morisien-embed: A Dedicated Text Embedding Model and Benchmark for Mauritian Creole](https://doi.org/10.5281/zenodo.21877805).
+[morisien-embed: Text Embedding Models and Evaluation for Mauritian Creole](https://doi.org/10.5281/zenodo.21877805).
 Sole author, indexed in OpenAIRE. Model, dataset and training code under MIT.
 
 <p>
