@@ -32,13 +32,13 @@ $ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
 {{MODELS}}
 ```
 
-**sante-embed** is 1.5B, rank {{RANK}} of {{FIELD}} on MTEB(Medical, v1). Complete 12-task
-submission, which only 158 of 371 models on that board manage.
+**sante-embed** is 1.5B, rank {{RANK}} of {{FIELD}} on MTEB(Medical, v1). It is one of the
+{{COMPLETE_FIELD}} models that submitted all {{TASKS}} tasks, and is rank {{COMPLETE_RANK}} among them.
 
 **morisien-embed** is the first text embedding model for Mauritian Creole, and
-`MorisienMTBitextMining` is the language's first task in MTEB. Auditing the standard evaluation
-split turned up 97% of the Kreyòl-MT test set sitting inside its own training data. I released a
-leak-filtered benchmark instead of publishing the contaminated number.
+`MorisienMTBitextMining` is the language's first task in MTEB. Auditing the obvious evaluation
+split turned up 97% of Kreyòl-MT's test set already inside the training data I was merging. I
+benchmarked on MorisienMT's test split instead, which shares no Creole sentence with training.
 
 ### Writing
 

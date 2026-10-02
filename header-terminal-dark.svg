@@ -22,7 +22,7 @@
     <tspan x="26" y="172" fill="#fbbf24">17</tspan><tspan fill="#64748b">  across peft, sentence-transformers, mteb, haystack</tspan>
 
     <tspan x="26" y="206" fill="#22c55e">$</tspan><tspan fill="#e2e8f0"> mteb rank --benchmark "MTEB(Medical, v1)"</tspan>
-    <tspan x="26" y="228" fill="#22d3ee">#9</tspan><tspan fill="#64748b"> of </tspan><tspan fill="#e2e8f0">387</tspan>
+    <tspan x="26" y="228" fill="#22d3ee">#9</tspan><tspan fill="#64748b"> of </tspan><tspan fill="#e2e8f0">389</tspan>
 
     <tspan x="26" y="262" fill="#22c55e">$</tspan><tspan fill="#e2e8f0"> _</tspan>
   </text>

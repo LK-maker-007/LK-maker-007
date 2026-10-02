@@ -31,9 +31,23 @@ def main() -> None:
     if row.empty:
         raise SystemExit(f"{MODEL} not present in {BENCHMARK} results")
 
-    out = {"rank": int(row["Rank (Borda)"].iloc[0]), "field": int(df.model_name.nunique())}
+    covered = df.groupby("model_name").task_name.nunique()
+    complete = df[df.model_name.isin(covered[covered == len(tasks)].index)]
+    rc = _borda_rank_from_long(pl.from_pandas(complete)).to_pandas()
+    row_c = rc[rc.model_name == MODEL]
+    if row_c.empty:
+        raise SystemExit(f"{MODEL} does not cover all {len(tasks)} {BENCHMARK} tasks")
+
+    out = {
+        "rank": int(row["Rank (Borda)"].iloc[0]),
+        "field": int(df.model_name.nunique()),
+        "tasks": len(tasks),
+        "complete_rank": int(row_c["Rank (Borda)"].iloc[0]),
+        "complete_field": int(complete.model_name.nunique()),
+    }
     (ROOT / "rank.json").write_text(json.dumps(out) + "\n", encoding="utf-8")
-    print(f"{MODEL}: rank {out['rank']} of {out['field']}")
+    print(f"{MODEL}: rank {out['rank']} of {out['field']}, "
+          f"{out['complete_rank']} of the {out['complete_field']} with all {out['tasks']} tasks")
 
 
 if __name__ == "__main__":
