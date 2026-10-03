@@ -15,13 +15,13 @@ deepset-ai/haystack                 1   typing.Literal serialisation
                                    17   merged, every diff and review thread public
 ```
 
-Three of the fixes are the same bug class, which is the one I keep finding: **something fails
+Six of the fixes are the same bug class, which is the one I keep finding: **something fails
 and reports success.**
 
 ```python
 # peft#3534  an adapter targeting no modules attached silently and trained nothing
 model.add_adapter("second", LoraConfig(target_modules=["does_not_exist"]))
-# before:  returns cleanly, adapts nothing, loss moves, you ship a broken model
+# before:  returns cleanly and attaches an adapter that adapts nothing
 # after:   raises NoMatchingPeftModuleError
 
 # sentence-transformers#3909  a 1-D query embedding read as a batch
