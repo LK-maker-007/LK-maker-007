@@ -35,10 +35,10 @@ semantic_search_qdrant(query_embeddings=one_query)
 ```console
 $ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
 
-Singaraj/morisien-embed-v1.5        348/30d   0.928 mean F1, MTEB task I also authored
-Singaraj/morisien-embed             213/30d   first embedding model for Mauritian Creole
-Singaraj/sante-embed                123/30d   rank 9 of 389, MTEB(Medical, v1)
-Singaraj/MorisienMTBitextMining      52/30d   benchmark task, MIT
+Singaraj/morisien-embed-v1.5        349/30d   0.928 mean F1, MTEB task I also authored
+Singaraj/morisien-embed             209/30d   first embedding model for Mauritian Creole
+Singaraj/sante-embed                125/30d   rank 9 of 389, MTEB(Medical, v1)
+Singaraj/MorisienMTBitextMining      67/30d   benchmark task, MIT
 ```
 
 **sante-embed** is 1.5B, rank 9 of 389 on MTEB(Medical, v1). It is one of the
