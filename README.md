@@ -6,13 +6,13 @@
 ```console
 $ gh pr list --author LK-maker-007 --state merged --json repository
 
-huggingface/sentence-transformers   5   semantic search, ONNX export, hard-negative mining
+huggingface/sentence-transformers   6   semantic search, ONNX export, hard-negative mining
 huggingface/peft                    3   DoRA merge and unmerge, adapter injection
 embeddings-benchmark/mteb           5   first Mauritian Creole task, model entries
 embeddings-benchmark/results        3   published evaluation results
 deepset-ai/haystack                 1   typing.Literal serialisation
                                    --
-                                   17   merged, every diff and review thread public
+                                   18   merged, every diff and review thread public
 ```
 
 Six of the fixes are the same bug class, which is the one I keep finding: **something fails
@@ -35,9 +35,9 @@ semantic_search_qdrant(query_embeddings=one_query)
 ```console
 $ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
 
-Singaraj/morisien-embed-v1.5        152/30d   0.928 mean F1, MTEB task I also authored
-Singaraj/morisien-embed             164/30d   first embedding model for Mauritian Creole
-Singaraj/sante-embed                169/30d   rank 9 of 390, MTEB(Medical, v1)
+Singaraj/morisien-embed-v1.5        154/30d   0.928 mean F1, MTEB task I also authored
+Singaraj/morisien-embed             166/30d   first embedding model for Mauritian Creole
+Singaraj/sante-embed                168/30d   rank 9 of 390, MTEB(Medical, v1)
 Singaraj/MorisienMTBitextMining      70/30d   benchmark task, MIT
 ```
 
