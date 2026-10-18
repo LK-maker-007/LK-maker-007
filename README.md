@@ -37,8 +37,8 @@ $ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
 
 Singaraj/morisien-embed-v1.5        162/30d   0.928 mean F1, MTEB task I also authored
 Singaraj/morisien-embed             166/30d   first embedding model for Mauritian Creole
-Singaraj/sante-embed                170/30d   rank 9 of 390, MTEB(Medical, v1)
-Singaraj/MorisienMTBitextMining      71/30d   benchmark task, MIT
+Singaraj/sante-embed                173/30d   rank 9 of 390, MTEB(Medical, v1)
+Singaraj/MorisienMTBitextMining      68/30d   benchmark task, MIT
 ```
 
 **sante-embed** is 1.5B, rank 9 of 390 on MTEB(Medical, v1). It is one of the
