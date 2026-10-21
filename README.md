@@ -7,12 +7,12 @@
 $ gh pr list --author LK-maker-007 --state merged --json repository
 
 huggingface/sentence-transformers   6   semantic search, ONNX export, hard-negative mining
-huggingface/peft                    3   DoRA merge and unmerge, adapter injection
+huggingface/peft                    4   DoRA merge and unmerge, adapter injection
 embeddings-benchmark/mteb           5   first Mauritian Creole task, model entries
 embeddings-benchmark/results        3   published evaluation results
 deepset-ai/haystack                 1   typing.Literal serialisation
                                    --
-                                   18   merged, every diff and review thread public
+                                   19   merged, every diff and review thread public
 ```
 
 Six of the fixes are the same bug class, which is the one I keep finding: **something fails
@@ -35,10 +35,10 @@ semantic_search_qdrant(query_embeddings=one_query)
 ```console
 $ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
 
-Singaraj/morisien-embed-v1.5        179/30d   0.928 mean F1, MTEB task I also authored
-Singaraj/morisien-embed             167/30d   first embedding model for Mauritian Creole
+Singaraj/morisien-embed-v1.5        181/30d   0.928 mean F1, MTEB task I also authored
+Singaraj/morisien-embed             153/30d   first embedding model for Mauritian Creole
 Singaraj/sante-embed                189/30d   rank 9 of 394, MTEB(Medical, v1)
-Singaraj/MorisienMTBitextMining      62/30d   benchmark task, MIT
+Singaraj/MorisienMTBitextMining      58/30d   benchmark task, MIT
 ```
 
 **sante-embed** is 1.5B, rank 9 of 394 on MTEB(Medical, v1). It is one of the
