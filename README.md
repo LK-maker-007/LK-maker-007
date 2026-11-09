@@ -36,13 +36,13 @@ semantic_search_qdrant(query_embeddings=one_query)
 $ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
 
 Singaraj/morisien-embed-v1.5        103/30d   0.928 mean F1, MTEB task I also authored
-Singaraj/morisien-embed              95/30d   first embedding model for Mauritian Creole
-Singaraj/sante-embed                125/30d   rank 9 of 407, MTEB(Medical, v1)
-Singaraj/MorisienMTBitextMining      22/30d   benchmark task, MIT
+Singaraj/morisien-embed              96/30d   first embedding model for Mauritian Creole
+Singaraj/sante-embed                122/30d   rank 11 of 412, MTEB(Medical, v1)
+Singaraj/MorisienMTBitextMining      21/30d   benchmark task, MIT
 ```
 
-**sante-embed** is 1.5B, rank 9 of 407 on MTEB(Medical, v1). It is one of the
-165 models that submitted all 12 tasks, and is rank 8 among them.
+**sante-embed** is 1.5B, rank 11 of 412 on MTEB(Medical, v1). It is one of the
+176 models that submitted all 12 tasks, and is rank 11 among them.
 
 **morisien-embed** is the first text embedding model for Mauritian Creole, and
 `MorisienMTBitextMining` is the language's first task in MTEB. Auditing the obvious evaluation
