@@ -17,8 +17,8 @@ REPOS = [
 ]
 
 MODELS = [
-    ("Singaraj/morisien-embed-v1.5", "model", "0.928 mean F1, MTEB task I also authored"),
     ("Singaraj/morisien-embed", "model", "first embedding model for Mauritian Creole"),
+    ("Singaraj/morisien-embed-v1.5", "model", "0.928 mean F1, MTEB task I also authored"),
     ("Singaraj/sante-embed", "model", "rank {rank} of {field}, MTEB(Medical, v1)"),
     ("Singaraj/MorisienMTBitextMining", "dataset", "benchmark task, MIT"),
 ]
@@ -46,7 +46,8 @@ def downloads() -> list[tuple[str, int, str]]:
     rank = json.loads((ROOT / "rank.json").read_text())
     out = []
     for name, kind, note in MODELS:
-        d = get(f"https://huggingface.co/api/{kind}s/{name}")["downloads"]
+        data = get(f"https://huggingface.co/api/{kind}s/{name}?expand[]=downloadsAllTime")
+        d = data.get("downloadsAllTime", data.get("downloads", 0))
         out.append((name, d, note.format(**rank)))
     return out
 
@@ -106,7 +107,9 @@ def main() -> None:
     pr_lines += [f"{'':<{w}}  --", f"{'':<{w}}  {total:>2}   merged, every diff and review thread public"]
 
     w2 = max(len(n) for n, _, _ in dl)
-    dl_lines = [f"{n:<{w2}}  {d:>6}/30d   {note}" for n, d, note in dl]
+    dl_lines = [f"{n:<{w2}}  {d:>5}   {note}" for n, d, note in dl]
+    total_dl = sum(d for _, d, _ in dl)
+    dl_lines += [f"{'':<{w2}}  -----", f"{'':<{w2}}  {total_dl:>5,}   all-time downloads across models and benchmark"]
 
     tpl = (ROOT / "README.template.md").read_text(encoding="utf-8")
     out = (tpl
@@ -126,7 +129,7 @@ def main() -> None:
         print(f"  {r:<34} {n}")
     print(f"rank {rank['rank']} of {rank['field']}")
     for n, d, _ in dl:
-        print(f"  {n:<34} {d}/30d")
+        print(f"  {n:<34} {d}")
 
 
 if __name__ == "__main__":

@@ -27,7 +27,7 @@ semantic_search_qdrant(query_embeddings=one_query)
 ### Models
 
 ```console
-$ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloads)/30d"'
+$ hf api models/Singaraj --jq '.[] | "\(.id)  \(.downloadsAllTime)"'
 
 {{MODELS}}
 ```
