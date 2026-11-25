@@ -3,8 +3,6 @@
   <img alt="Singaraj B, machine learning practitioner" src="header-terminal-light.svg">
 </picture>
 
-Singaraj B: independent ML engineer building open embedding models and benchmarks for low-resource languages (`morisien-embed`, `sante-embed`). Contributor to Hugging Face and MTEB.
-
 ```console
 $ gh pr list --author LK-maker-007 --state merged --json repository
 
